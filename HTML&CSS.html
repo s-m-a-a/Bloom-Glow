@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regestir</title>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
         body {
-            background-color: rgba(227, 129, 181, 0.682);
+            margin: 0;
+            background-color: linear-gradient(to right, #fffffff7, #f7f4f68b);
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             height: 100vh;
         }
-   
+
         body::after {
             content: ' ';
             width: 100%;
             height: 100%;
-            background: rgba(238, 201, 224, 0.197);
+            background: rgba(249, 154, 202, 0.197);
             position: absolute;
             clip-path: circle(60% at left 50%);
             /*to draw a shape use clip-path*/
@@ -31,21 +34,27 @@
             content: ' ';
             width: 100%;
             height: 100%;
-            background:rgba(238, 201, 224, 0.197);
+            background: rgba(249, 154, 202, 0.197);
             position: absolute;
             clip-path: circle(60% at right 50%);
             /*to draw a shape use clip-path*/
             z-index: -1;
             /*to make the circle under the container*/
         }
-        h1 a{
-            font-style: italic;
-            font-family:serif;
-            color: rgb(230, 115, 176);
+
+        h1 a {
+            color: white;
             text-decoration: none;
+            font-size: 32px;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-family: "Pacifico", cursive;
+            text-shadow: 3px 1px 1px #f977c9;
+            margin: 10px 5px;
         }
+
         form {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(246, 168, 207, 0.758);
             border-radius: 50px;
             width: 40%;
             /*400px*/
@@ -53,6 +62,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 5px;
+            transition: 2s;
         }
 
         form input {
@@ -95,30 +105,47 @@
             flex-grow: 1;
             padding: 5px 8px;
         }
+
+        #errorMessages {
+            font-size: 22px;
+            color: rgb(141, 3, 90);
+        }
     </style>
 </head>
 
 <body>
     <h1><a href="C:\Users\HP-ProBook\OneDrive\WEB\Bloom&Glow\Structure.html">Bloom&Glow</a></h1>
-    <form>
+    <form onsubmit="return validateRegisterForm()">
         <span>
             <b>Create an account</b>
             <hr color="azure">
             Hello Beautiful, we have migrated to a new website! If you had an account on our previous website please
-            reset your password. If you are new here we would love if you could create a new account so we can have your
+            reset your password. If you are new here, we would love if you could create a new account so we can have
+            your
             details and provide a faster checkout for you!
         </span>
-        <input for="name" class="form" type="text" placeholder="First name" required>
-        <input for="name" class="form" type="text" placeholder="Last name" required>
-        <input class="form" type="text" placeholder="User name" required>
-        <input for="email" class="form" type="email" placeholder="Email" required>
-        <input for="password" class="form" type="password" placeholder="Password" required>
-        <input class="form" type="date" placeholder="Birthday" required>
-        <button class="form">Sign up</button>
+        <input type="text" placeholder="First name" required pattern="[A-Za-z]{1,20}"
+            title="First name should only contain letters and be up to 20 characters long.">
+        <input type="text" placeholder="Last name" required pattern="[A-Za-z]{1,20}"
+            title="Last name should only contain letters and be up to 20 characters long.">
+        <input type="text" placeholder="User name" required pattern="[A-Za-z0-9_.]{3,20}"
+            title="User name must be 3-20 characters and can include letters, numbers, underscores, and periods.">
+        <input type="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            title="Please enter a valid email address (e.g., user@example.com)">
+        <input type="password" placeholder="Password" required
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}"
+            title="Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.">
+        <input type="date" placeholder="Birthday" required>
+        <button type="submit">Sign up</button>
         <span>Already have an account? <a href="Login.html">login</a></span>
     </form>
-    <div id="errorMessages" style="color: red;"></div>
-     <script src="Dynamic.js"></script>
+    <br>
+    <div id="errorMessages"></div>
+
+    <script src="Dynamic.js"></script>
+</body>
+
+</html>
 </body>
 
 </html>

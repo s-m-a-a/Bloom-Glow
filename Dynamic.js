@@ -1,40 +1,93 @@
+function validateRegisterForm() {
+  const errorMessages = [];
+  const firstName = document.querySelector('input[placeholder="First name"]');
+  const lastName = document.querySelector('input[placeholder="Last name"]');
+  const userName = document.querySelector('input[placeholder="User name"]');
+  const email = document.querySelector('input[type="email"]');
+  const password = document.querySelector('input[type="password"]');
 
+  // Validate First Name
+  if (!/^[A-Za-z]{1,20}$/.test(firstName.value)) {
+    errorMessages.push(
+      "First name must contain only letters and be 1-20 characters long."
+    );
+  }
+  // Validate Last Name
+  if (!/^[A-Za-z]{1,20}$/.test(lastName.value)) {
+    errorMessages.push(
+      "Last name must contain only letters and be 1-20 characters long."
+    );
+  }
+  // Validate User Name
+  if (!/^[A-Za-z0-9_.]{3,20}$/.test(userName.value)) {
+    errorMessages.push(
+      "User name must be 3-20 characters long and can include letters, numbers, underscores, and periods."
+    );
+  }
+  // Validate Email
+  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)) {
+    errorMessages.push("Please enter a valid email address.");
+  }
+  // Validate Password
+  if (
+    !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/.test(
+      password.value
+    )
+  ) {
+    errorMessages.push(
+      "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
+    );
+  }
 
-document.getElementById('registrationForm').addEventListener('submit', function(event) {  
-  event.preventDefault(); // Prevent form submission  
-  const name = document.getElementById('name').value.trim();  
-  const email = document.getElementById('email').value.trim();  
-  const password = document.getElementById('password').value.trim();  
-  const errorMessages = [];  
-  
-  // Validate Name  
-  const nameRegex = /^[A-Za-z\s'-]{2,}$/;  
-  if (!nameRegex.test(name)) {  
-      errorMessages.push("Name must be at least 2 characters long and can contain letters, spaces, apostrophes, or hyphens.");  
-  }  
-  
-  // Validate Email  
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;  
-  if (!emailRegex.test(email)) {  
-      errorMessages.push("Please enter a valid email address.");  
-  }  
+  if (errorMessages.length > 0) {
+    document.getElementById("errorMessages").innerHTML =
+      errorMessages.join("<br>");
+    return false; // Prevent form submission
+  }
+  return true; // Form is valid
+}
 
-  // Validate Password  
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;  
-  if (!passwordRegex.test(password)) {  
-      errorMessages.push("Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.");  
-  }  
+function validateLoginForm() {
+  const errorMessages = [];
+  const email = document.querySelector('input[type="email"]');
+  const password = document.querySelector('input[type="password"]');
 
-  // Display Errors or Success  
-  const errorMessagesDiv = document.getElementById('errorMessages');  
-  errorMessagesDiv.innerHTML = ''; // Clear previous messages  
-  
-  if (errorMessages.length > 0) {  
-      errorMessages.forEach(message => {  
-          errorMessagesDiv.innerHTML += `<p>${message}</p>`;  
-      });  
-  } else {  
-      errorMessagesDiv.innerHTML = '<p style="color: green;">Registration successful!</p>';  
-      // Here you can proceed with form submission or further logic  
-  }  
-});  
+  // Validate Email
+  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)) {
+    errorMessages.push("Please enter a valid email address.");
+  }
+  // Validate Password
+  if (
+    !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/.test(
+      password.value
+    )
+  ) {
+    errorMessages.push(
+      "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
+    );
+  }
+
+  if (errorMessages.length > 0) {
+    document.getElementById("errorMessages").innerHTML =
+      errorMessages.join("<br>");
+    return false; // Prevent form submission
+  }
+  return true; // Form is valid
+}
+
+function validatePasswordResetForm() {
+  const errorMessages = [];
+  const email = document.querySelector('input[type="email"]');
+
+  // Validate Email
+  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)) {
+    errorMessages.push("Please enter a valid email address.");
+  }
+
+  if (errorMessages.length > 0) {
+    document.getElementById("errorMessages").innerHTML =
+      errorMessages.join("<br>");
+    return false; // Prevent form submission
+  }
+  return true; // Form is valid
+}

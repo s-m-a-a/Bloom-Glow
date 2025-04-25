@@ -5,16 +5,32 @@
     <title>About us</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-        @import url('https://fonts.googleapis.com/css2?family=Birthstone&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
         body {
-            background-color: rgba(213, 187, 210, 0.492);
+            background-color: linear-gradient(to right, #fffffff7, #f7f4f68b);
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
         }
 
         * {
             font-family: serif;
             text-align: center;
+        }
+
+        .container {
+            width: 60%;
+            background: rgba(244, 153, 218, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            border-radius: 50px;
         }
 
         a {
@@ -25,48 +41,59 @@
             font-weight: 300;
             font-family: "Pacifico", cursive;
             text-shadow: 3px 1px 1px #f977c9;
-            margin: 10px 5px ;
+            margin: 10px 5px;
         }
-        h1{
+
+        h1 {
+            text-decoration: underline;
             color: #980264;
         }
-        pre{
-           font-size: 20px;
-           font-weight: 500;
-           color: #980264;
+
+        .story {
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #980264;
         }
     </style>
 </head>
 
 <body>
     <a href="Structure.html">Bloom&Glow</a>
-    <h1>"The Story"</h1>
-    <pre>
-        Bloom&Glow isn’t just your link to a range of impeccable and diverse local products produced by highly qualified
-        beauty experts, but it’s also an opportunity for you to broaden your horizons and simply feel great about
-        yourself.
+    <div class="container">
+        <h1>"The Story"</h1>
+        <div class="story">
+            Bloom&Glow isn’t just your link to a range of impeccable and diverse local products produced by highly
+            qualified
+            beauty experts, but it’s also an opportunity for you to broaden your horizons and simply feel great about
+            yourself.
 
 
-        In 2016, Bloom&Glow began its journey as a blog that simplified the often-intimidating beauty world. A couple
-        of years later, in 2018, Source Beauty transitioned and became the first Egyptian beauty e-commerce company,
-        focusing on local and price-friendly products for all of your beauty needs. Our platform features over 90
-        brands, and over 3,500 products, making Source Beauty a go-to in the Egyptian beauty industry.
+            In 2016, Bloom&Glow began its journey as a blog that simplified the often-intimidating beauty world. A
+            couple
+            of years later, in 2018, Source Beauty transitioned and became the first Egyptian beauty e-commerce company,
+            focusing on local and price-friendly products for all of your beauty needs. Our platform features over 90
+            brands, and over 3,500 products, making Source Beauty a go-to in the Egyptian beauty industry.
 
 
-        The main ethos of Bloom&Glow is to inspire the everyday Egyptian woman and encourage her to elevate her life
-        and make the right beauty choices. Not only does Source Beauty cater to the average Egyptian woman, it’s also
-        led by women with expertise in the ins and outs of the beauty world. Our platform aims to help women choose
-        local alternatives to their self-care routines and source out the region’s best products.
+            The main ethos of Bloom&Glow is to inspire the everyday Egyptian woman and encourage her to elevate her life
+            and make the right beauty choices. Not only does Source Beauty cater to the average Egyptian woman, it’s
+            also
+            led by women with expertise in the ins and outs of the beauty world. Our platform aims to help women choose
+            local alternatives to their self-care routines and source out the region’s best products.
 
 
-        Since the Egyptian market is flooded with export-grade skin-care and undiscovered hair-care brands, we primarily
-        work with local brands that deliver fresh and innovative products, giving them a platform to become the next
-        best thing. We also work with a handful of selected leading international brands who locally source and
-        manufacture many of their products.
+            Since the Egyptian market is flooded with export-grade skin-care and undiscovered hair-care brands, we
+            primarily
+            work with local brands that deliver fresh and innovative products, giving them a platform to become the next
+            best thing. We also work with a handful of selected leading international brands who locally source and
+            manufacture many of their products.
 
 
-        We’re glad you’ve decided to go with Source Beauty for your skincare, haircare or makeup fix, and invite you to
-        transform the way you see self-care – once and for all!</pre>
+            We’re glad you’ve decided to go with Source Beauty for your skincare, haircare or makeup fix, and invite you
+            to
+            transform the way you see self-care – once and for all!</div>
+    </div>
 </body>
 
 </html>

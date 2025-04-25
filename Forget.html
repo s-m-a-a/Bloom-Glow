@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
         body {
-            background-color: rgba(227, 129, 181, 0.682);
+            margin: 0;
+            background-color: linear-gradient(to right, #fffffff7, #f7f4f68b);
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             height: 100vh;
         }
-   
+
         body::after {
             content: ' ';
             width: 100%;
             height: 100%;
-            background: rgba(238, 201, 224, 0.197);
+            background: rgba(249, 154, 202, 0.197);
             position: absolute;
             clip-path: circle(60% at left 50%);
             /*to draw a shape use clip-path*/
@@ -31,23 +34,30 @@
             content: ' ';
             width: 100%;
             height: 100%;
-            background:rgba(238, 201, 224, 0.197);
+            background: rgba(249, 154, 202, 0.197);
             position: absolute;
             clip-path: circle(60% at right 50%);
             /*to draw a shape use clip-path*/
             z-index: -1;
             /*to make the circle under the container*/
         }
-        h1 a{
-            font-style: italic;
-            font-family:serif;
-            color: rgb(230, 115, 176);
+
+        h1 a {
+            color: white;
             text-decoration: none;
+            font-size: 32px;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-family: "Pacifico", cursive;
+            text-shadow: 3px 1px 1px #f977c9;
+            margin: 10px 5px;
         }
+
         form {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(246, 168, 207, 0.758);
             border-radius: 50px;
-            width: 40%;/*400px*/
+            width: 40%;
+            /*400px*/
             padding: 10px;
             display: flex;
             flex-wrap: wrap;
@@ -65,16 +75,19 @@
             flex-grow: 1;
             flex-basis: 100%;
         }
-        form span{
+
+        form span {
             flex-grow: 1;
             line-height: 25px;
             text-align: center;
             color: rgb(255, 241, 250);
             font-size: 18px;
         }
-        a{
-            color: rgb(158, 29, 113); 
+
+        a {
+            color: rgb(158, 29, 113);
         }
+
         button {
             background-color: rgb(248, 207, 228);
             color: rgb(110, 2, 71);
@@ -86,24 +99,30 @@
             flex-grow: 1;
             padding: 5px 8px;
         }
+
+        #errorMessages {
+            font-size: 22px;
+            color: rgb(141, 3, 90);
+        }
     </style>
     </style>
 </head>
 
 <body>
     <h1><a href="C:\Users\HP-ProBook\OneDrive\WEB\Bloom&Glow\Structure.html">Bloom&Glow</a></h1>
-    <form id="registrationForm">
+    <form onsubmit="return validatePasswordResetForm()">
         <span>
             <b>Reset your password</b>
             <hr color="azure">
             Enter your email address below to recover your password. You will need to check your email to reset it:
         </span>
-        <label for="email"></label>
-        <input id="email"class="form" type="email" placeholder="Email" required>
-        <button class="form">Submit</button>
-        <span><a href="Login.html">Back</a></span> 
+        <input type="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            title="Please enter a valid email address (e.g., user@example.com)">
+        <button type="submit" class="form">Submit</button>
+        <span><a href="Login.html">Back</a></span>
     </form>
-    <div id="errorMessages" style="color:red;"></div>
+    <br>
+    <div id="errorMessages"></div>
     <script src="Dynamic.js"></script>
 </body>
 

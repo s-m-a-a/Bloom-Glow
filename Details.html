@@ -5,10 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Details</title>
+  <link rel="stylesheet" href="Style.css">
   <style>
     /*======================details-page======================== */
     body {
-      background-color: rgb(254, 249, 252);
+      background-color: rgba(242, 193, 222, 0.57);
       margin: 0;
       padding: 0;
       font-family: sans-serif;
@@ -229,6 +230,39 @@
 </head>
 
 <body>
+
+        <!-- Navbar-->
+        <nav>
+          <div class="logo"><a href="Structure.html">Bloom&Glow</a></div>
+          <ul id="menuList" class="desktop-menu">
+              <li><a href="Structure.html">Home</a></li>
+              <li><a href="#Product">Products</a></li>
+              <li><a href="#Contact">Contact</a></li>
+              <li><a href="about.html">About</a></li>
+          </ul>
+          <input placeholder="Search" class="input" name="text" type="text" id="searchBar">
+          <div class="icons">
+              <a class="icon" href="Resposive form/HTML&CSS.html"><i class="fas fa-user-plus"></i></a>
+              <a class="icon" href="#"><i class="fas fa-shopping-cart"></i></a>
+          </div>
+          <!-- Menu icon for responsive navbar -->
+          <div class="menu-icon">
+              <i class="fas fa-bars"></i>
+              <ul class="dropdown-menu">
+                  <li><a href="Structure.html">Home</a></li>
+                  <li><a href="#Product">Products</a></li>
+                  <li><a href="#Contact">Contact</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                  <li><a href="Resposive form/HTML&CSS.html"><i class="fas fa-user-plus"></i></a></li>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+
+
+
+
   <div class="product-details" id="product-details">
     <!-- Static layout: only update inner content via JS -->
     <section id="product_details">
@@ -270,6 +304,140 @@
         <a href="#" class="button" id="add-to-cart">Add To Cart</a>
       </div>
     </section>
+  </div>
+
+
+   <!--         Footer          -->
+
+        <!--services section-->
+        <section class="services">
+          <div class="box">
+              <img src="photos/fre1.png" alt="">
+              <h3>Free Delivery</h3>
+              <p>Save your mony and get free delivery for shopping above 500 EGP.</p>
+
+          </div>
+          <div class="box">
+              <img src="photos/sec1.png" alt="">
+              <h3>Secure Payments</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+          </div>
+          <div class="box">
+              <img src="photos/ser2.png" alt="">
+              <h3>24/7 Support</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+          </div>
+      </section>
+
+
+      <footer>
+          <!--First Row-->
+          <div class="footer-row">
+              <div class="footer-box">
+                  <h4>Quick Links</h4>
+                  <ul>
+                      <li><a href="Structure.html">Home</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="#">Shop</a></li>
+                      <li><a href="#Gallery">Gallery</a></li>
+                      <li><a href="#">Message</a></li>
+                      <li><a href="#">Blogs</a></li>
+                  </ul>
+              </div>
+              <div class="footer-box">
+                  <h4>Extra Links</h4>
+                  <ul>
+                      <li><a href="#">My Favorite</a></li>
+                      <li><a href="#">MuOrder</a></li>
+                      <li><a href="#">My Wishlist</a></li>
+                      <li><a href="#">Private Policy</a></li>
+                      <li><a href="#">Terms Of Use</a></li>
+                  </ul>
+              </div>
+              <div class="footer-box">
+                  <h4>Contact Info</h4>
+                  <ul>
+                      <!--Contact information-->
+                      <li><a href="tel:+1234567890"><i class="fas fa-phone-alt"></i> +123 456 7890</a></li>
+                      <li><a href="tel:+1234567890"><i class="fas fa-phone-alt"></i> +111 222 3330</a></li>
+                      <li><a href="mailto:support@example.com"><i class="fas fa-envelope"></i>
+                              Bloom&Glow@gmail.com</a></li>
+                      <li><a href="https://www.example.com" target="_blank"><i class="fas fa-globe"></i>
+                              www.bloomandglow@gmail.com</a></li>
+                  </ul>
+                  <!--social-icons-->
+                  <ul class="social-icons">
+                      <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                      </li>
+                      <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                      </li>
+                      <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                  </ul>
+              </div>
+
+              <div class="footer-box">
+                  <h4>Newsletter</h4>
+                  <p>Subscribe For Latest Updates</p>
+                  <input type="email" id="email" placeholder="Enter your email">
+                  <button onclick="subscribe()">Subscribe</button>
+              </div>
+              <script>
+                  function subscribe() {
+
+                      var email = document.getElementById("email").value;
+
+                      if (email) {
+                          alert("Thank you for subscribing, " + email + "!");
+                      } else {
+                          alert("Please enter a valid email.");
+                      }
+
+                  }
+              </script>
+          </div>
+          <!--------------------------------------------------------------------->
+          <!--Second Row-->
+          <div class="footer-row footer-row-second">
+              <div class="footer-box payment-notifications">
+                  <p class="pay" style="text-align: center; text-decoration: underline;">Pay securely with </p>
+                  <ul
+                      style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 0; list-style-type: none;">
+                      <li style="border-radius: 2px;">
+                          <img src="https://cdn.shopify.com/s/files/1/0684/4923/9327/files/Payment-Methods-168X11-5.png?v=1708435520"
+                              width="75" height="auto" alt="payment-logo">
+                      </li>
+                      <li style="border-radius: 2px;">
+                          <img src="https://cdn.shopify.com/s/files/1/0684/4923/9327/files/Payment-Methods-168X11-2.png?v=1708435520"
+                              width="75" height="auto" alt="payment-logo">
+                      </li>
+                      <li style="border-radius: 2px;">
+                          <img src="https://cdn.shopify.com/s/files/1/0684/4923/9327/files/Cib-logo.png?v=1708437257"
+                              width="75" height="auto" alt="payment-logo">
+                      </li>
+                      <li style="border-radius: 2px;">
+                          <img src="https://cdn.shopify.com/s/files/1/0684/4923/9327/files/Payment-Methods-168X11-7.png?v=1708435521"
+                              width="75" height="auto" alt="payment-logo">
+                      </li>
+                      <li style="border-radius: 2px;">
+                          <img src="https://cdn.shopify.com/s/files/1/0684/4923/9327/files/Payment-Methods-168X11-6.png?v=1708435520"
+                              width="75" height="auto" alt="payment-logo">
+                      </li>
+                      <li style="border-radius: 2px;">
+                          <img src="https://cdn.shopify.com/s/files/1/0684/4923/9327/files/Payment-Methods-168X11-8.png?v=1708435520"
+                              width="75" height="auto" alt="payment-logo">
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="footer-box copyright">
+              <p align="center">© 2025 Bloom & Glow. All rights reserved.</p>
+          </div>
+
+      </footer>
+
   </div>
 
 

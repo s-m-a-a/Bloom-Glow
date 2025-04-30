@@ -78,7 +78,6 @@ function validateLoginForm() {
 function validatePasswordResetForm() {
   const errorMessages = [];
   const email = document.querySelector('input[type="email"]');
-
   // Validate Email
   if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)) {
     errorMessages.push("Please enter a valid email address.");
@@ -91,3 +90,29 @@ function validatePasswordResetForm() {
   }
   return true; // Form is valid
 }
+
+
+
+//Search bar filter
+document.getElementById("searchBar").addEventListener("input", function () {
+  let searchValue = this.value.toLowerCase();
+  let products = document.querySelectorAll(".card");
+
+  products.forEach(product => {
+      let title = product.querySelector(".text-title").textContent.toLowerCase();
+      let description = product.querySelector(".text-body").textContent.toLowerCase();
+
+      if (title.includes(searchValue) || description.includes(searchValue)) {
+          product.style.display = "flex";
+      } else {
+          product.style.display = "none";
+      }
+  });
+});
+
+
+
+//Access product details page by the product id
+function goToDetails(productId) {  
+  window.location.href = `Details.html?product=${productId}`;  
+} 
